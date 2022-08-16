@@ -1,5 +1,5 @@
 /*
-*UC 1 -First name validation First name starts with Cap and has minimum 3 characters
+*UC 1 -First name validation, First name starts with Cap and has minimum 3 characters
 */
 const text =  document.querySelector('#text');
 const textError =  document.querySelector('.text-error');
@@ -8,6 +8,17 @@ text.addEventListener('input',function(){
 	if(firstNameRegex.test(text.value))
 	textError.textContent = "";
 	else textError.textContent = "First Name is Incorrect!";
+});
+/*
+*UC 2 -Email input validation 
+*/
+const email =  document.querySelector('#email');
+const textError1 =  document.querySelector('.email-error');
+email.addEventListener('input',function(){
+	let emailIdRegex = RegExp('[a-z][a-z A-Z 0-9]+[@][a-z]+[.][a-z]{2,5}')
+	if(emailIdRegex.test(email.value))
+	textError1.textContent = "";
+	else textError1.textContent = "Email Id is Incorrect!";
 });
 
 //Salary selector
