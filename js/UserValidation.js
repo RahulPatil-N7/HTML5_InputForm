@@ -26,18 +26,18 @@ email.addEventListener('input',function(){
 const tel =  document.querySelector('#tel');
 const textError2 =  document.querySelector('.tel-error');
 tel.addEventListener('input',function(){
-	let telRegex = RegExp('(0/91)?[7-9][0-9]{9}')
+	let telRegex = RegExp('(0/91)?[7-9][0-9]{9}');
 	if(telRegex.test(tel.value))
 	textError2.textContent = "";
 	else textError2.textContent = "Telphone Number is Incorrect!";
 });
 /*
-*UC 4 -Password validation, minimum 8 characters 
+*UC 4,5 -Password validation, minimum 8 characters, 1 uppercase, at least 1 numeric & 1 special character  
 */
 const pwd =  document.querySelector('#pwd');
 const textError3 =  document.querySelector('.pwd-error');
 pwd.addEventListener('input',function(){
-	let pwdRegex = RegExp('[a-z]{8,}');
+	let pwdRegex = RegExp('(?=.*[A-Z]){1,}(?=.*[a-z]){1,}(?=.*[0-9]){1,}(?=.*[@#$%^&-+=()]){1}[a-zA-Z0-9@#$%^&-+=()]{8,}');
 	if(pwdRegex.test(pwd.value))
 	textError3.textContent = "";
 	else textError3.textContent = "Password is Incorrect!";
